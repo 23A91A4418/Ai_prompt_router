@@ -1,0 +1,11 @@
+services:
+  ai-prompt-router:
+    build: .
+    container_name: ai-prompt-router
+    env_file:
+      - .env
+    volumes:
+      - ./route_log.jsonl:/app/route_log.jsonl
+    stdin_open: true # Equivalent to -i
+    tty: true        # Equivalent to -t
+    restart: "no"
